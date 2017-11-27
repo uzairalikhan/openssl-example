@@ -1,5 +1,5 @@
-CFLAGS = -I /usr/local/ssl/include
-LDFLAGS = -L /usr/local/ssl/lib -lcrypto -ldl
+CFLAGS = -I/usr/local/ssl/include -Wall
+LDFLAGS = -L/usr/local/ssl/lib -lcrypto -ldl
 
 all: clean bin/gen-ecdsa-key
 
@@ -10,7 +10,12 @@ clean:
 
 bin/gen-ecdsa-key:
 	@echo "+ $@"
-	@$(CC) gen-ecdsa-key/main.c -o $@ $(CFLAGS) $(LDFLAGS)
+	$(CC) src/gen-ecdsa-key/main.c -o $@ $(CFLAGS) $(LDFLAGS)
+
+SRC=$(wildcard src/shs/*.c)
+bin/shs: $(SRC)
+	@echo "+ $@"
+	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 shell: image
 	@echo "+ $@"
