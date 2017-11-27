@@ -37,7 +37,7 @@ void generate_random(int nbytes){
 int main() {
     //fips mode *ON*
     initialize_fips(1); 
-    // //generate random Bytes
+    //generate random number of given bytes
     generate_random(1);   
     return 0;
 }
