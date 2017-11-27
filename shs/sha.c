@@ -26,11 +26,9 @@ unsigned int calc_hash(const char* mode, const char* in, size_t size, unsigned c
 typedef enum { false, true } bool;
 
 int main(int argc, char *argv[]) {
-    if (FIPS_init(1) == 1) {
+    if (FIPS_init(1) != 1) {
         unsigned long err_code = ERR_get_error();
-        if (err_code == 0) {
-            return 1;
-        }
+
         const size_t ERR_BUFFER_SIZE = 120;
         char *err_buf = (char*)malloc(sizeof(char) * ERR_BUFFER_SIZE);
         ERR_error_string(err_code, err_buf);
