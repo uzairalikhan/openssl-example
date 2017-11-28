@@ -236,6 +236,7 @@ static const unsigned char kat_RSA_PSS_SHA256[] = {
 
 int FIPS_selftest_rsa()
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	int ret = 0;
 	RSA *key = NULL;
 	EVP_PKEY pk;

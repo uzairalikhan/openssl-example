@@ -156,6 +156,7 @@ int fips_post_status(void)
 /* Run all selftests */
 int FIPS_selftest(void)
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	int rv = 1;
 	fips_post_begin();
 	if(!FIPS_check_incore_fingerprint())
@@ -164,7 +165,7 @@ int FIPS_selftest(void)
 		rv = 0;
 	if (!FIPS_selftest_x931())
 		rv = 0;
-    	if (!FIPS_selftest_sha1())
+    if (!FIPS_selftest_sha1())
 		rv = 0;
 	if (!FIPS_selftest_hmac())
 		rv = 0;

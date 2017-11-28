@@ -83,6 +83,7 @@ static const struct
 
 int FIPS_selftest_des()
     {
+    fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
     int n, ret = 0;
     EVP_CIPHER_CTX ctx;
     FIPS_cipher_ctx_init(&ctx);

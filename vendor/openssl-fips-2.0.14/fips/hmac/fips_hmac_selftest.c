@@ -115,6 +115,7 @@ static const HMAC_KAT vector[] = {
 
 int FIPS_selftest_hmac()
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	size_t n;
 	unsigned int    outlen;
 	unsigned char   out[EVP_MAX_MD_SIZE];

@@ -151,6 +151,7 @@ static const unsigned char dsa_test_2048_priv_key[] = {
 
 int FIPS_selftest_dsa()
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	DSA *dsa=NULL;
 	EVP_PKEY pk;
 	int ret = 0;

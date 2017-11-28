@@ -76,6 +76,7 @@ static const unsigned char ret[][SHA_DIGEST_LENGTH]=
 
 int FIPS_selftest_sha1()
 	{
+    fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	int rv = 1;
 	size_t i;
 	

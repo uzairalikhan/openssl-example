@@ -153,6 +153,7 @@ static int do_x931_test(unsigned char *key, int keylen,
 
 int FIPS_selftest_x931()
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	int rv = 1;
 	FIPS_x931_reset();
 	if (!FIPS_x931_test_mode())

@@ -76,6 +76,7 @@ static const struct
 
 int FIPS_selftest_aes()
     {
+    fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
     int n;
     int ret = 0;
     EVP_CIPHER_CTX ctx;
@@ -133,6 +134,7 @@ static const unsigned char ccm_tag[] = {
 
 int FIPS_selftest_aes_ccm(void)
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	int ret = 0, do_corrupt = 0;
 	unsigned char out[128], tag[16];
 	EVP_CIPHER_CTX ctx;
@@ -241,6 +243,7 @@ static const unsigned char gcm_tag[] = {
 
 int FIPS_selftest_aes_gcm(void)
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	int ret = 0, do_corrupt = 0;
 	unsigned char out[128], tag[16];
 	EVP_CIPHER_CTX ctx;
@@ -364,6 +367,7 @@ static const unsigned char XTS_256_ct[] = {
 
 int FIPS_selftest_aes_xts()
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	int ret = 1;
 	EVP_CIPHER_CTX ctx;
 	FIPS_cipher_ctx_init(&ctx);

@@ -140,6 +140,7 @@ static EC_SELFTEST_DATA test_ec_data[] =
 
 int FIPS_selftest_ecdsa()
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	EC_KEY *ec = NULL;
 	BIGNUM *x = NULL, *y = NULL, *d = NULL;
 	EVP_PKEY pk;

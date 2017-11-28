@@ -136,6 +136,7 @@ static ECDH_SELFTEST_DATA test_ecdh_data[] =
 
 int FIPS_selftest_ecdh(void)
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	EC_KEY *ec1 = NULL, *ec2 = NULL;
 	const EC_POINT *ecp = NULL;
 	BIGNUM *x = NULL, *y = NULL, *d = NULL;

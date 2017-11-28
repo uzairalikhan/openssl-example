@@ -197,6 +197,7 @@ unsigned int FIPS_incore_fingerprint(unsigned char *sig,unsigned int len)
 
 int FIPS_check_incore_fingerprint(void)
     {
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
     unsigned char sig[EVP_MAX_MD_SIZE];
     unsigned int len;
     int rv = 0;

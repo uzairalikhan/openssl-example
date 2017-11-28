@@ -110,6 +110,7 @@ static const CMAC_KAT vector[] = {
 
 int FIPS_selftest_cmac()
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	size_t n, outlen;
 	unsigned char    out[32];
 	const EVP_CIPHER *cipher;

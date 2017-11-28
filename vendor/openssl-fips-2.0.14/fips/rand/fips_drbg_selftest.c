@@ -802,6 +802,7 @@ int FIPS_drbg_health_check(DRBG_CTX *dctx)
 
 int FIPS_selftest_drbg(void)
 	{
+	fprintf(stdout, "FUNCTION: %s INVOKED\n", __func__);
 	DRBG_CTX *dctx;
 	DRBG_SELFTEST_DATA *td;
 	int rv = 1;
