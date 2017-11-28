@@ -375,6 +375,7 @@ static int do_drbg_instantiate(DRBG_CTX *dctx, DRBG_SELFTEST_DATA *td,
 
 static int fips_drbg_error_check(DRBG_CTX *dctx, DRBG_SELFTEST_DATA *td)
 	{
+	printf("\nPerforming error and health check \n");
 	unsigned char randout[1024];
 	TEST_ENT t;
 	size_t i;
@@ -780,6 +781,7 @@ int fips_drbg_kat(DRBG_CTX *dctx, int nid, unsigned int flags)
 
 int FIPS_drbg_health_check(DRBG_CTX *dctx)
 	{
+	printf("Calling Health check DRBG");
 	int rv;
 	DRBG_CTX *tctx = NULL;
 	tctx = FIPS_drbg_new(0, 0);
