@@ -14,7 +14,7 @@ bin/initialize-fips:
 
 bin/fips-selftest:
 	@echo "+ $@"
-	@$(CC) fips-selftest/main.c -o $@ $(CFLAGS) $(LDFLAGS)
+	@$(CC) -g fips-selftest/main.c -o $@ $(CFLAGS) $(LDFLAGS)
 
 bin/fips-mode-status:
 	@echo "+ $@"
@@ -26,7 +26,7 @@ bin/fips-zerorize:
 
 bin/gen-random:
 	@echo "+ $@"
-	@$(CC) gen-random/main.c -o $@ $(CFLAGS) $(LDFLAGS)
+	@$(CC) -g gen-random/main.c -o $@ $(CFLAGS) $(LDFLAGS)
 
 bin/gen-ecdsa-key:
 	@echo "+ $@"
@@ -34,7 +34,7 @@ bin/gen-ecdsa-key:
 
 shell: image
 	@echo "+ $@"
-	docker run -it --rm -v ${PWD}:/root/src openssl:fips
+	docker run --privileged -it --rm -v ${PWD}:/root/src openssl:fips
 
 image: clean
 	@echo "+ $@"

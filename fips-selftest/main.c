@@ -23,6 +23,9 @@ void fips_selftest(){
         fprintf(stdout, "FUNCTION: %s, LOG: SELF TEST SUCCESSFUL\n", __func__);
     } else {
         fprintf(stdout, "FUNCTION: %s, LOG: SELF TEST FAILURE\n", __func__);
+	ERR_load_crypto_strings();
+        fprintf(stderr, ", ERROR: ");
+        ERR_print_errors_fp(stderr);
     }
 }
 
